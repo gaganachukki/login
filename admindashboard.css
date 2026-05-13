@@ -91,6 +91,21 @@ body{
   border-left: 3px solid #d4af37;
 }
 
+.sidebar li.logout-item {
+  margin-top: 20px;
+  color: #e74c3c;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar li.logout-item:hover {
+  color: #c0392b;
+  background: rgba(231, 76, 60, 0.05);
+}
+
+.sidebar li.logout-item i {
+  margin-right: 10px;
+}
+
 .sidebar-footer {
   padding: 20px;
 }
@@ -193,6 +208,8 @@ header {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  width: 160px;
+  text-align: center;
 }
 
 .btn-download:hover {
@@ -203,6 +220,26 @@ header {
 
 .btn-download:active {
   transform: translateY(0);
+}
+
+.btn-action {
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  width: 100px;
+  text-align: center;
+}
+
+.btn-action:hover {
+  background: #d4af37;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* Dashboard Grid */
@@ -310,10 +347,13 @@ td {
 }
 
 .status {
-  padding: 6px 12px;
+  padding: 8px 12px;
   border-radius: 4px;
   font-size: 10px;
   font-weight: bold;
+  display: inline-block;
+  min-width: 100px;
+  text-align: center;
 }
 
 .status.preparing { background: rgba(241, 196, 15, 0.2); color: #f1c40f; }
@@ -400,7 +440,7 @@ td {
         background: #111;
         padding-top: 60px;
         border-right: 1px solid rgba(212, 175, 55, 0.2);
-        padding-bottom: 20px;
+        padding-bottom: 80px;
         overflow-y: auto;
         border-bottom: none;
     }
@@ -507,11 +547,55 @@ td {
     .overview-header h2 { font-size: 24px; }
     
     .table-section {
-        padding: 15px;
+        padding: 20px;
         overflow-x: auto;
+        background: #121212;
+        border-radius: 12px;
     }
     
-    table { min-width: 600px; }
-    
+    table { 
+        min-width: 650px; 
+        border-collapse: separate;
+        border-spacing: 0 12px;
+    }
+
+    th {
+        padding: 10px 20px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 11px;
+        color: #d4af37;
+        text-align: left;
+    }
+
+    td {
+        padding: 18px 20px;
+        background: #1a1a1a;
+        border-bottom: none;
+        color: #eee;
+        font-size: 13px;
+    }
+
+    td:first-child {
+        border-radius: 10px 0 0 10px;
+        font-weight: bold;
+        color: #d4af37;
+    }
+
+    td:last-child {
+        border-radius: 0 10px 10px 0;
+    }
+
+    tr:hover td {
+        background: #222;
+    }
+
+    .status {
+        padding: 8px 15px;
+        display: inline-block;
+        min-width: 100px;
+        text-align: center;
+    }
+
     .value { font-size: 22px; }
 }

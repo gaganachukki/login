@@ -26,10 +26,18 @@
     </select>
 
     <input type="email" id="email" placeholder="Email Address" autocomplete="username" required>
+    
+    <div class="password-field">
+      <input type="password" id="password" placeholder="Password" autocomplete="new-password" required>
+      <i class="ri-eye-off-line toggle-password" id="togglePassword"></i>
+    </div>
 
-    <input type="password" id="password" placeholder="Password" autocomplete="new-password" required>
+    <div class="password-field">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" autocomplete="new-password" required>
+      <i class="ri-eye-off-line toggle-password" id="toggleConfirmPassword"></i>
+    </div>
 
-    <input type="password" id="confirmPassword" placeholder="Confirm Password" autocomplete="new-password" required>
+    <div id="signupMessage" class="message-container"></div>
 
     <div class="terms">
       <input type="checkbox" required>

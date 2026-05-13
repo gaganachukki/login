@@ -10,7 +10,14 @@ if (signupForm) {
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
 
+    const messageBox = document.getElementById("signupMessage");
+    if (messageBox) messageBox.innerText = "";
+
     if (password !== confirmPassword) {
+      if (messageBox) {
+        messageBox.innerText = "Passwords do not match!";
+        messageBox.className = "message-container error";
+      }
       return;
     }
 
@@ -18,6 +25,10 @@ if (signupForm) {
     
     // Check if user already exists
     if (users.find(u => u.email === email)) {
+      if (messageBox) {
+        messageBox.innerText = "Email already registered!";
+        messageBox.className = "message-container error";
+      }
       return;
     }
 
@@ -173,4 +184,32 @@ window.addEventListener("load", function() {
       });
     });
   }
+  // --- LOGOUT LOGIC ---
+  const logoutBtnAdmin = document.getElementById("logout-btn-admin");
+  const logoutBtnUser = document.getElementById("logout-btn-user");
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+  };
+
+  if (logoutBtnAdmin) logoutBtnAdmin.addEventListener("click", handleLogout);
+  if (logoutBtnUser) logoutBtnUser.addEventListener("click", handleLogout);
+
+  // --- PASSWORD TOGGLE LOGIC ---
+  const setupToggle = (toggleId, passwordId) => {
+    const toggle = document.getElementById(toggleId);
+    const passwordInput = document.getElementById(passwordId);
+    if (toggle && passwordInput) {
+      toggle.addEventListener("click", function() {
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+        this.classList.toggle("ri-eye-line");
+        this.classList.toggle("ri-eye-off-line");
+      });
+    }
+  };
+
+  setupToggle("togglePassword", "password");
+  setupToggle("toggleConfirmPassword", "confirmPassword");
 });
