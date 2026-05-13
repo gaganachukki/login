@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stackly Admin - Cuisine Overview</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="admindashboard.css">
+</head>
+
+<body>
+    <button id="menu-toggle" class="menu-toggle"><i class="ri-menu-line"></i></button>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="assets/logo.webp" alt="Stackly Logo" class="sidebar-logo">
+        </div>
+        <ul>
+            <li id="admin-tab-dashboard" class="active">DASHBOARD</li>
+            <li id="admin-tab-orders">ORDERS</li>
+            <li id="admin-tab-menu">MENU ITEMS</li>
+            <li id="admin-tab-guests">GUESTS</li>
+            <li id="admin-tab-reservations">RESERVATIONS</li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="404.html"><button class="btn-return">RETURN SITE</button></a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="welcome-section">
+                <h2 id="welcomeName">Welcome Admin</h2>
+            </div>
+            <div class="user-info">
+                <div class="user-details">
+                    <span class="user-name" id="profileEmail">admin@stackly.com</span>
+                    <span class="user-role">ADMIN</span>
+                </div>
+                <div class="user-avatar">
+                    <span class="user-icon">👤</span>
+                </div>
+            </div>
+        </header>
+
+        <div id="admin-dashboard-section" class="tab-content active">
+            <div class="overview-header">
+                <div class="title-section">
+                    <h2>Cuisine Overview</h2>
+                    <p>Here are your daily metrics.</p>
+                </div>
+                <a href="404.html"><button class="btn-download">DOWNLOAD REPORT</button></a>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="kpi-card">
+                    <div class="card-header">
+                        <span class="icon">💰</span>
+                        <span class="trend up">+14%</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="label">Today's Revenue</p>
+                        <p class="value">$14,250.00</p>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="card-header">
+                        <span class="icon">📋</span>
+                        <span class="trend up">+5%</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="label">Total Orders</p>
+                        <p class="value">128</p>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="card-header">
+                        <span class="icon">👥</span>
+                        <span class="trend down">-2%</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="label">Total Guests</p>
+                        <p class="value">215</p>
+                    </div>
+                </div>
+                <div class="kpi-card highlight">
+                    <div class="card-header">
+                        <span class="icon">📅</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="label">New Reservations</p>
+                        <p class="value">48 Pending</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-sections">
+                <div class="table-section">
+                    <div class="section-header">
+                        <h3>Recent Kitchen Orders</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ORDER ID</th>
+                                <th>GUEST</th>
+                                <th>ITEMS</th>
+                                <th>TOTAL</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-501</td>
+                                <td>Michael Scott</td>
+                                <td>2x Wagyu Ribeye...</td>
+                                <td>$250.00</td>
+                                <td><span class="status preparing">PREPARING</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-500</td>
+                                <td>Pam Beesly</td>
+                                <td>1x Lobster Bisque...</td>
+                                <td>$120.50</td>
+                                <td><span class="status served">SERVED</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="analytics-section">
+                    <div class="section-header">
+                        <h3>Revenue Analytics</h3>
+                    </div>
+                    <div class="chart-placeholder">
+                        <div class="chart-container">
+                            <div class="chart-line"></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ORDERS SECTION -->
+        <div id="admin-orders-section" class="tab-content">
+            <div class="overview-header">
+                <h2>Manage Kitchen Orders</h2>
+            </div>
+            <div class="table-section full-width">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ORDER ID</th>
+                            <th>GUEST</th>
+                            <th>ORDER DETAILS</th>
+                            <th>TIME</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-505</td>
+                            <td>Dwight Schrute</td>
+                            <td>Beet Salad, Steak</td>
+                            <td>12:45 PM</td>
+                            <td><span class="status preparing">PREPARING</span></td>
+                            <td><a href="404.html"><button class="btn-action">Serve</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-504</td>
+                            <td>Angela Martin</td>
+                            <td>Vegan Pasta</td>
+                            <td>12:30 PM</td>
+                            <td><span class="status served">SERVED</span></td>
+                            <td><a href="404.html"><button class="btn-action">Archive</button></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- MENU ITEMS SECTION -->
+        <div id="admin-menu-section" class="tab-content">
+            <div class="overview-header">
+                <h2>Menu Management</h2>
+                <button class="btn-download">+ ADD ITEM</button>
+            </div>
+            <div class="table-section full-width">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ITEM NAME</th>
+                            <th>CATEGORY</th>
+                            <th>PRICE</th>
+                            <th>STOCK</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Classic Wagyu Burger</td>
+                            <td>Main Course</td>
+                            <td>$15.00</td>
+                            <td>45</td>
+                            <td><span class="status served">AVAILABLE</span></td>
+                            <td><a href="404.html"><button class="btn-action">Edit</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Truffle Pizza</td>
+                            <td>Main Course</td>
+                            <td>$22.00</td>
+                            <td>12</td>
+                            <td><span class="status preparing">LIMITED</span></td>
+                            <td><a href="404.html"><button class="btn-action">Edit</button></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div id="admin-guests-section" class="tab-content">
+            <div class="overview-header">
+                <h2>Guest Directory</h2>
+            </div>
+            <div class="table-section full-width">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>GUEST NAME</th>
+                            <th>EMAIL</th>
+                            <th>TOTAL VISITS</th>
+                            <th>TOTAL SPENT</th>
+                            <th>MEMBERSHIP</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Michael Scott</td>
+                            <td>michael@dundermifflin.com</td>
+                            <td>15</td>
+                            <td>$1,250.00</td>
+                            <td><span class="status served">PLATINUM</span></td>
+                            <td><a href="404.html"><button class="btn-action">Profile</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Jim Halpert</td>
+                            <td>jim@dundermifflin.com</td>
+                            <td>8</td>
+                            <td>$650.00</td>
+                            <td><span class="status served">GOLD</span></td>
+                            <td><a href="404.html"><button class="btn-action">Profile</button></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="admin-reservations-section" class="tab-content">
+            <div class="overview-header">
+                <h2>Reservation Tracking</h2>
+            </div>
+            <div class="table-section full-width">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>GUEST</th>
+                            <th>DATE</th>
+                            <th>TIME</th>
+                            <th>TABLE #</th>
+                            <th>GUESTS</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Stanley Hudson</td>
+                            <td>May 15, 2024</td>
+                            <td>7:00 PM</td>
+                            <td>Table 4</td>
+                            <td>4</td>
+                            <td><span class="status served">CONFIRMED</span></td>
+                        </tr>
+                        <tr>
+                            <td>Kevin Malone</td>
+                            <td>May 15, 2024</td>
+                            <td>8:30 PM</td>
+                            <td>Table 2</td>
+                            <td>1</td>
+                            <td><span class="status preparing">PENDING</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

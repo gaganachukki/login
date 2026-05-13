@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    min-height: 100vh;
+    background: url("assets/asianfood.webp") center/cover no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.signup-box {
+    position: relative;
+    z-index: 1;
+    width: 400px;
+    background: rgba(20, 20, 20, 0.95);
+    padding: 25px 35px;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.8s ease-out;
+}
+
+.signup-box h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.signup-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-box input,
+.signup-box select {
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.signup-box input:focus,
+.signup-box select:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    background: #161616;
+}
+
+.signup-box button {
+    padding: 12px;
+    background: #d4af37;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup-box button:hover {
+    background: #b8860b;
+}
+
+.terms {
+    color: #888;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+/* Social Login */
+.social-login {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.social-login p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.social-icon:hover {
+    background: #d4af37;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.login-link {
+    color: #888;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media(max-width:480px) {
+    body {
+        height: auto;
+        padding: 20px 0;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .signup-box {
+        width: 95%;
+        padding: 20px 25px;
+        margin-top: 20px;
+    }
+    
+    .signup-box h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .signup-box input, .signup-box select {
+        padding: 10px;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .signup-box button {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .social-login { margin-top: 10px; }
+    .login-link { margin-top: 10px; }
+}

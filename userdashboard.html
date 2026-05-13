@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stackly Foodie - Member Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="userdashboard.css">
+</head>
+
+<body>
+    <button id="menu-toggle" class="menu-toggle"><i class="ri-menu-line"></i></button>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="assets/logo.webp" alt="Stackly Logo" class="sidebar-logo">
+        </div>
+        <ul>
+            <li id="tab-dashboard" class="active">DASHBOARD</li>
+            <li id="tab-orders">MY ORDERS</li>
+            <li id="tab-menu">MENU</li>
+            <li id="tab-reservations">RESERVATIONS</li>
+            <li id="tab-rewards">REWARDS</li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="404.html"><button class="btn-return">ORDER NOW</button></a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="welcome-section">
+                <h2 id="welcomeName">Welcome User</h2>
+            </div>
+            <div class="user-info">
+                <div class="user-details">
+                    <span class="user-name" id="profileEmail">user@stackly.com</span>
+                    <span class="user-role">GOLD MEMBER</span>
+                </div>
+                <div class="user-avatar">
+                    <span class="user-icon">👤</span>
+                </div>
+            </div>
+        </header>
+
+        <div id="dashboard-section" class="tab-content active">
+            <div class="overview-header">
+                <div class="title-section">
+                    <h2>Your Stackly Hub</h2>
+                    <p>Your favorite dishes are waiting for you.</p>
+                </div>
+                <a href="404.html"><button class="btn-download">VIEW REWARDS</button></a>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="kpi-card">
+                    <div class="card-header">
+                        <span class="icon">📦</span>
+                        <span class="trend up">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="label">Current Orders</p>
+                        <p class="value">02</p>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="card-header">
+                        <span class="icon">✨</span>
+                        <span class="trend up">+250 pts</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="label">Reward Points</p>
+                        <p class="value">1,450</p>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="card-header">
+                        <span class="icon">❤️</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="label">Saved Dishes</p>
+                        <p class="value">12 Items</p>
+                    </div>
+                </div>
+                <div class="kpi-card highlight">
+                    <div class="card-header">
+                        <span class="icon">🍽️</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="label">Table Reservation</p>
+                        <p class="value">Tonight 8:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-sections">
+                <div class="table-section">
+                    <div class="section-header">
+                        <h3>Recent Orders</h3>
+                        <a href="#" class="view-all">ORDER HISTORY</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ORDER #</th>
+                                <th>RESTAURANT</th>
+                                <th>ITEMS</th>
+                                <th>TOTAL</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#FD-902</td>
+                                <td>The Grill House</td>
+                                <td>1x BBQ Platter...</td>
+                                <td>$45.00</td>
+                                <td><span class="status preparing">ON THE WAY</span></td>
+                            </tr>
+                            <tr>
+                                <td>#FD-885</td>
+                                <td>Sushi Zen</td>
+                                <td>2x Salmon Roll...</td>
+                                <td>$32.50</td>
+                                <td><span class="status served">DELIVERED</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="analytics-section">
+                    <div class="section-header">
+                        <h3>Your Spending</h3>
+                    </div>
+                    <div class="chart-placeholder">
+                        <div class="chart-container">
+                            <div class="chart-line"></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MY ORDERS SECTION -->
+        <div id="my-orders-section" class="tab-content">
+            <div class="overview-header">
+                <h2>My Order History</h2>
+            </div>
+            <div class="table-section full-width">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ORDER ID</th>
+                            <th>DATE</th>
+                            <th>ITEMS</th>
+                            <th>PRICE</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-7721</td>
+                            <td>May 12, 2024</td>
+                            <td>Double Cheese Burger, Fries</td>
+                            <td>$18.50</td>
+                            <td><span class="status served">DELIVERED</span></td>
+                            <td><a href="404.html"><button class="btn-action">Reorder</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-7650</td>
+                            <td>May 10, 2024</td>
+                            <td>Margherita Pizza, Coke</td>
+                            <td>$24.00</td>
+                            <td><span class="status served">DELIVERED</span></td>
+                            <td><a href="404.html"><button class="btn-action">Reorder</button></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- MENU SECTION -->
+        <div id="menu-section" class="tab-content">
+            <div class="overview-header">
+                <h2>Explore Our Menu</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="assets/foodburger.webp" alt="Burger">
+                    <h4>Classic Wagyu Burger</h4>
+                    <p>$15.00</p>
+                    <a href="404.html"><button class="btn-add">Add to Cart</button></a>
+                </div>
+                <div class="menu-item">
+                    <img src="assets/foodpizza.webp" alt="Pizza">
+                    <h4>Truffle Mushroom Pizza</h4>
+                    <p>$22.00</p>
+                    <a href="404.html"><button class="btn-add">Add to Cart</button></a>
+                </div>
+                <div class="menu-item">
+                    <img src="assets/foodsalad.webp" alt="Salad">
+                    <h4>Garden Fresh Salad</h4>
+                    <p>$12.00</p>
+                    <a href="404.html"><button class="btn-add">Add to Cart</button></a>
+                </div>
+                <div class="menu-item">
+                    <img src="assets/fooddosa.webp" alt="Pasta">
+                    <h4>Plain Dosa</h4>
+                    <p>$18.00</p>
+                    <a href="404.html"><button class="btn-add">Add to Cart</button></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="reservations-section" class="tab-content">
+            <div class="overview-header">
+                <h2>Book a Table</h2>
+            </div>
+            <div class="reservation-container">
+                <form class="reservation-form">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time">
+                    </div>
+                    <div class="form-group">
+                        <label>Guests</label>
+                        <select>
+                            <option>2 Persons</option>
+                            <option>4 Persons</option>
+                            <option>6+ Persons</option>
+                        </select>
+                    </div>
+                    <a href="404.html"><button type="submit" class="btn-submit">Confirm Booking</button></a>
+                </form>
+                <div class="upcoming-reservations">
+                    <h3>Upcoming Reservations</h3>
+                    <div class="reservation-card">
+                        <p><strong>Tonight 8:00 PM</strong></p>
+                        <p>2 Persons - Table #12</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rewards-section" class="tab-content">
+            <div class="overview-header">
+                <h2>Your Rewards & Points</h2>
+            </div>
+            <div class="rewards-container">
+                <div class="points-balance">
+                    <h3>Current Balance</h3>
+                    <p class="pts">1,450 <span>PTS</span></p>
+                </div>
+                <div class="available-offers">
+                    <h3>Available Offers</h3>
+                    <div class="offer-card">
+                        <h4>20% OFF Entire Order</h4>
+                        <p>Valid on orders above $50</p>
+                        <a href="404.html"><button class="btn-redeem">Redeem Now</button></a>
+                    </div>
+                    <div class="offer-card">
+                        <h4>Free Dessert</h4>
+                        <p>Redeem for 500 points</p>
+                        <a href="404.html"><button class="btn-redeem">Redeem 500 Pts</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
