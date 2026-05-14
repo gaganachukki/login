@@ -252,8 +252,18 @@ body{
         padding: 0 10px;
     }
 
+    .error-text {
+        min-width: auto;
+        width: 100%;
+    }
+
     .error-text h1 {
         font-size: 5rem;
+    }
+
+    .error-text h2 {
+        font-size: 1.5rem;
+        word-wrap: break-word;
     }
 
     .logo {

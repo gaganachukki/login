@@ -164,7 +164,6 @@ window.addEventListener("load", function() {
   if (menuToggle && sidebar) {
     menuToggle.addEventListener("click", function() {
       sidebar.classList.toggle("active");
-      // Change icon based on state
       const icon = this.querySelector("i");
       if (sidebar.classList.contains("active")) {
         icon.classList.replace("ri-menu-line", "ri-close-line");
@@ -173,13 +172,46 @@ window.addEventListener("load", function() {
       }
     });
 
+    // Mobile Navbar Toggles
+    const mobileToggle = document.getElementById("mobile-menu-toggle");
+    const mobileToggleAdmin = document.getElementById("mobile-menu-toggle-admin");
+
+    const handleMobileToggle = function() {
+        sidebar.classList.toggle("active");
+        const icon = this.querySelector("i");
+        if (sidebar.classList.contains("active")) {
+            icon.classList.replace("ri-menu-line", "ri-close-line");
+        } else {
+            icon.classList.replace("ri-close-line", "ri-menu-line");
+        }
+    };
+
+    if (mobileToggle) mobileToggle.addEventListener("click", handleMobileToggle);
+    if (mobileToggleAdmin) mobileToggleAdmin.addEventListener("click", handleMobileToggle);
+
+    // Sidebar Close Buttons
+    const closeBtn = document.getElementById("close-sidebar");
+    const closeBtnAdmin = document.getElementById("close-sidebar-admin");
+
+    const handleClose = () => {
+        sidebar.classList.remove("active");
+        const activeToggle = mobileToggle || mobileToggleAdmin || menuToggle;
+        const icon = activeToggle.querySelector("i");
+        if (icon) icon.classList.replace("ri-close-line", "ri-menu-line");
+    };
+
+    if (closeBtn) closeBtn.addEventListener("click", handleClose);
+    if (closeBtnAdmin) closeBtnAdmin.addEventListener("click", handleClose);
+
     // Close sidebar when clicking a tab on mobile
     const navItems = sidebar.querySelectorAll("li");
     navItems.forEach(item => {
       item.addEventListener("click", () => {
         if (window.innerWidth <= 768) {
           sidebar.classList.remove("active");
-          menuToggle.querySelector("i").classList.replace("ri-close-line", "ri-menu-line");
+          const activeToggle = mobileToggle || mobileToggleAdmin || menuToggle;
+          const icon = activeToggle.querySelector("i");
+          if (icon) icon.classList.replace("ri-close-line", "ri-menu-line");
         }
       });
     });
@@ -195,6 +227,12 @@ window.addEventListener("load", function() {
 
   if (logoutBtnAdmin) logoutBtnAdmin.addEventListener("click", handleLogout);
   if (logoutBtnUser) logoutBtnUser.addEventListener("click", handleLogout);
+
+  const logoutBtnAdminMobile = document.getElementById("logout-btn-admin-mobile");
+  const logoutBtnUserMobile = document.getElementById("logout-btn-user-mobile");
+
+  if (logoutBtnAdminMobile) logoutBtnAdminMobile.addEventListener("click", handleLogout);
+  if (logoutBtnUserMobile) logoutBtnUserMobile.addEventListener("click", handleLogout);
 
   // --- PASSWORD TOGGLE LOGIC ---
   const setupToggle = (toggleId, passwordId) => {
