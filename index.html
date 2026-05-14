@@ -33,8 +33,11 @@
                 </select>
 
                 <input type="email" id="loginEmail" placeholder="Email Address" autocomplete="username" required />
-                <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password"
-                    required />
+                
+                <div class="password-field">
+                    <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password" required />
+                    <i class="ri-eye-off-line toggle-password" id="toggleLoginPassword"></i>
+                </div>
 
                 <button type="submit">Sign In</button>
 

@@ -1,4 +1,4 @@
-// --- SIGNUP LOGIC ---
+
 const signupForm = document.getElementById("signupForm");
 if (signupForm) {
   signupForm.addEventListener("submit", function (e) {
@@ -23,7 +23,7 @@ if (signupForm) {
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
     
-    // Check if user already exists
+
     if (users.find(u => u.email === email)) {
       if (messageBox) {
         messageBox.innerText = "Email already registered!";
@@ -39,7 +39,6 @@ if (signupForm) {
   });
 }
 
-// --- LOGIN LOGIC ---
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", function (e) {
@@ -55,23 +54,20 @@ if (loginForm) {
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
     
-    // 1. Try to find an exact match (email, password, role)
     let user = users.find(u => u.email === email && u.password === password && u.role === role);
 
-    // 2. If no exact match, but email exists, maybe they used a dummy password?
-    // According to "any dummy credentials should enter", we let them in anyway.
+
     if (!user) {
       const existingUser = users.find(u => u.email === email && u.role === role);
       if (existingUser) {
-        user = existingUser; // Use their registered name even with dummy password
+        user = existingUser; 
       } else {
-        // 3. Completely new dummy credentials
+
         const guestName = email.split('@')[0];
         user = { fullName: guestName, email: email, role: role };
       }
     }
 
-    // Save to session so dashboard can read it
     sessionStorage.setItem("loggedInUser", JSON.stringify(user));
 
     if (role === "user") {
@@ -82,7 +78,6 @@ if (loginForm) {
   });
 }
 
-// --- DASHBOARD LOGIC (Auto-fill profile) ---
 window.addEventListener("load", function() {
   const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
   
@@ -91,12 +86,12 @@ window.addEventListener("load", function() {
     const profileEmail = document.getElementById("profileEmail");
     const profileRole = document.querySelector(".user-role");
 
-    if (welcomeName) welcomeName.innerText = `Welcome ${loggedInUser.fullName}`;
+    if (welcomeName) welcomeName.innerHTML = `Hey, ${loggedInUser.fullName} <span class="wave">👋</span>`;
     if (profileEmail) profileEmail.innerText = loggedInUser.email;
     if (profileRole) profileRole.innerText = loggedInUser.role.toUpperCase();
   }
 
-  // --- TAB SWITCHING LOGIC (User Dashboard) ---
+
   const tabs = {
     "tab-dashboard": "dashboard-section",
     "tab-orders": "my-orders-section",
@@ -109,20 +104,20 @@ window.addEventListener("load", function() {
     const tabEl = document.getElementById(tabId);
     if (tabEl) {
       tabEl.addEventListener("click", function() {
-        // Remove active from all tabs
+      
         Object.keys(tabs).forEach(id => {
           document.getElementById(id).classList.remove("active");
           document.getElementById(tabs[id]).classList.remove("active");
         });
 
-        // Add active to clicked tab
+
         this.classList.add("active");
         document.getElementById(tabs[tabId]).classList.add("active");
       });
     }
   });
 
-  // --- ADMIN TAB SWITCHING LOGIC ---
+
   const adminTabs = {
     "admin-tab-dashboard": "admin-dashboard-section",
     "admin-tab-orders": "admin-orders-section",
@@ -135,13 +130,13 @@ window.addEventListener("load", function() {
     const tabEl = document.getElementById(tabId);
     if (tabEl) {
       tabEl.addEventListener("click", function() {
-        // Remove active from all admin tabs
+      
         Object.keys(adminTabs).forEach(id => {
           document.getElementById(id).classList.remove("active");
           document.getElementById(adminTabs[id]).classList.remove("active");
         });
 
-        // Add active to clicked admin tab
+
         this.classList.add("active");
         document.getElementById(adminTabs[tabId]).classList.add("active");
       });
@@ -203,7 +198,7 @@ window.addEventListener("load", function() {
     if (closeBtn) closeBtn.addEventListener("click", handleClose);
     if (closeBtnAdmin) closeBtnAdmin.addEventListener("click", handleClose);
 
-    // Close sidebar when clicking a tab on mobile
+
     const navItems = sidebar.querySelectorAll("li");
     navItems.forEach(item => {
       item.addEventListener("click", () => {
@@ -216,7 +211,7 @@ window.addEventListener("load", function() {
       });
     });
   }
-  // --- LOGOUT LOGIC ---
+  
   const logoutBtnAdmin = document.getElementById("logout-btn-admin");
   const logoutBtnUser = document.getElementById("logout-btn-user");
 
@@ -234,7 +229,7 @@ window.addEventListener("load", function() {
   if (logoutBtnAdminMobile) logoutBtnAdminMobile.addEventListener("click", handleLogout);
   if (logoutBtnUserMobile) logoutBtnUserMobile.addEventListener("click", handleLogout);
 
-  // --- PASSWORD TOGGLE LOGIC ---
+
   const setupToggle = (toggleId, passwordId) => {
     const toggle = document.getElementById(toggleId);
     const passwordInput = document.getElementById(passwordId);
@@ -250,4 +245,5 @@ window.addEventListener("load", function() {
 
   setupToggle("togglePassword", "password");
   setupToggle("toggleConfirmPassword", "confirmPassword");
+  setupToggle("toggleLoginPassword", "loginPassword");
 });

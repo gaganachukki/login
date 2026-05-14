@@ -111,6 +111,30 @@ body {
     background: #161616;
 }
 
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-field input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 45%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.toggle-password:hover {
+    color: #d4af37;
+}
+
 .login-box button {
     padding: 15px;
     background: #d4af37;
