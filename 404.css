@@ -173,8 +173,12 @@ body{
         inset 0 0 20px rgba(255,255,255,0.03);
 }
 
-.plate span{
-    font-size:7rem;
+.error-img {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));
+    border-radius: 50%;
 }
 
 /* Animation */
@@ -230,9 +234,7 @@ body{
         height:250px;
     }
 
-    .plate span{
-        font-size:5rem;
-    }
+
 }
 
 @media(max-width:500px){
