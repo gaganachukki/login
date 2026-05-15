@@ -510,9 +510,13 @@ td {
 
     .sidebar .logo {
         display: block;
-        padding: 10px 20px;
-        margin-bottom: 10px;
+        padding: 5px 20px;
+        margin-bottom: 5px;
         text-align: center;
+    }
+
+    .sidebar-logo {
+        max-width: 120px;
     }
 
     .close-sidebar {
@@ -523,12 +527,12 @@ td {
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
         color: #fff;
-        width: 45px;
-        height: 45px;
+        width: 38px;
+        height: 38px;
         border-radius: 50%;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
+        font-size: 20px;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1001;
@@ -549,23 +553,29 @@ td {
         display: flex;
         flex-direction: column;
         padding: 0;
-        gap: 10px;
+        gap: 5px;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .sidebar li {
         white-space: normal;
-        padding: 20px;
-        font-size: 18px;
+        padding: 15px 20px;
+        font-size: 15px;
         border-bottom: 1px solid rgba(255,255,255,0.03);
     }
 
     .sidebar-footer {
         display: block;
         width: 100%;
-        max-width: 300px;
+        max-width: 250px;
         margin-top: auto;
+        padding: 15px;
+    }
+
+    .btn-return {
+        padding: 10px;
+        font-size: 14px;
     }
 
     .main-content {
